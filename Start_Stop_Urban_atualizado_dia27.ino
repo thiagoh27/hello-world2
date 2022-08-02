@@ -136,11 +136,12 @@ void loop() {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 case 5://freou
       if(digitalRead(freio) == 0){//Freio pressionado 
-            pos=0;
-            servo.write(pos);
-            Serial.println("Freio");
-            Serial.print("Posicao: "); 
-            Serial.println(pos);
+        pos=0;
+        servo.write(pos);
+        Serial.println("Freio");
+        Serial.print("Posicao: "); 
+        Serial.println(pos);
+        FSMstate = 5;
        }
       else if(digitalRead(switchSS) == 0 && digitalRead(freio) == 1 ){// Freio solto
         FSMstate = 1;
